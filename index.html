@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500&display=swap" rel="stylesheet">
+    <title>Best site</title>
+</head>
+<body onload="SwitchTheme()">
+    <div class="Name__form">
+      <div class="header">
+        <h1 class="h1">Введите своё имя</h1>
+        <button onclick="SwitchTheme()" type="button" class="theme"></button>
+      </div>
+        <div  name="acquaintance" id="form1">
+            <div class="input_form">
+            <input onkeyup="emptyInput()" placeholder="Введите почту" type="email" name="email" class="Name__mail" autocomplete="off" id="email" required><br>
+            <input onkeyup="emptyInput()" placeholder="Введите логин" type="text" name="login" class="Name__login" autocomplete="off" id="login" required><br>
+            <input placeholder="Введите имя" type="text" name="name" class="Name__text" autocomplete="off" id="name"><br>
+            <input onchange="emptyInput()" onkeyup="emptyInput()" type="date" name="birthday" class="Name__date" autocomplete="off" id="birthday" required>
+            <span class="date__text">Укажите дату рождения</span><br>
+            <input onclick="return sendJSON(this)" disabled type="submit" value="Отправить" class="submit"> </div>
+
+            <!-- скрипт, который обработает нажатие на кнопку и отправит данные на сервер -->
+<!-- <script>
+    // эта функция сработает при нажатии на кнопку
+    function sendJSON() {
+      // с помощью jQuery обращаемся к элементам на странице по их именам
+      let name = document.querySelector('#name');
+      let lastname = document.querySelector('#lastname');
+      // а вот сюда мы поместим ответ от сервера
+      let result = document.querySelector('.result');
+      // создаём новый экземпляр запроса XHR
+      let xhr = new XMLHttpRequest();
+      // адрес, куда мы отправим нашу JSON-строку
+      let url = "http://localhost:8080/users";
+      // открываем соединение
+      xhr.open("POST", url, true);
+      // устанавливаем заголовок — выбираем тип контента, который отправится на сервер, в нашем случае мы явно пишем, что это JSON
+      xhr.setRequestHeader("Content-Type", "application/json");
+      // когда придёт ответ на наше обращение к серверу, мы его обработаем здесь
+      xhr.onreadystatechange = function () {
+        // если запрос принят и сервер ответил, что всё в порядке
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          // выводим то, что ответил нам сервер — так мы убедимся, что данные он получил правильно
+          result.innerHTML = this.responseText;
+        }
+      };
+      // преобразуем наши данные JSON в строку
+      var data = JSON.stringify({ "name": name.value, "lastname": lastname.value });
+      // когда всё готово, отправляем JSON на сервер
+      xhr.send(data);
+    }
+  </script>
+<script>
+    let xhr = new XMLHttpRequest();
+    URL = "http://localhost:8080/users";
+    xhr.open("POST", url, true);
+    setRequestHeader("Content-Type", "application/json");
+
+    // когда придёт ответ на наше обращение к серверу, мы его обработаем здесь
+xhr.onreadystatechange = function () {
+  // если запрос принят и сервер ответил, что всё в порядке
+  if (xhr.readyState === 4 && xhr.status === 200) {
+    // выводим то, что ответил нам сервер — так мы убедимся, что данные он получил правильно
+    result.innerHTML = this.responseText;
+  }
+};
+
+var data = JSON.stringify({ "name":
+name.value, "mail": mail.value });
+</script>
+
+             <script>
+                const formElement = documnt.getElementById('form1'); // извлекаем элемент формы
+                formElement.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const formData = new FormData(formElement); // создаём объект FormData, передаём в него элемент формы
+                // теперь можно извлечь данные
+                const name = formData.get('name'); // Имя пользователя
+                const mail = formData.get('mail'); // Почта пользователя
+                
+                    });
+
+
+            </script> -->
+
+        </div>
+        <p class="info-title">text</p>
+
+
+        <div class="user-id">
+          <span class="id-text">Ваш id:</span>
+          <span class="id-value"></span>
+        </div>
+
+        
+        <div class="user-info">
+        <p class="user-name" id="paragraph">1</p>
+        <p class="user-name" id="paragraph2">2</p>
+        <p class="user-name" id="paragraph3">3</p>
+        <p id="paragraph4">4</p>
+
+
+        </div>
+
+
+    </div>
+
+    <!-- <span class="simple-text">span1</span>
+    <span class="simple-text">span2</span>
+    <span class="simple-text">span3</span> -->
+
+    <script src="script.js">
+    
+    </script>
+</body>
+</html>
